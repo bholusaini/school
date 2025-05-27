@@ -1,12 +1,24 @@
-import Form from "./shared/form"
+import Form, { type FormDataType } from "./shared/form"
 import Input from "./shared/input"
 import login from "../assets/login.jpg"
 import logo from "../assets/logo.avif"
 import Card from "./shared/card"
 import {Link} from "react-router-dom"
-
+import axios from "axios"
+import { toast } from "react-toastify"
 
 const Signup = () => {
+   
+    const signup = async(values:FormDataType)=>{
+            try{
+                const {data} = await axios.post("http://localhost:8080/auth/signup", values) 
+              toast.success(data.message);
+            }
+            catch(err:any)
+            {
+                toast.error(err.message);
+            }
+        }
   return (
     <div className="w-full h-screen overflow-hidden animate__animated animate-fadeIn">
       <div className=" flex justify-center items-center h-screen">
@@ -19,31 +31,35 @@ const Signup = () => {
                 <h1 className="text-2xl font-bold text-black">School</h1>
               </div>
               
-              <Form className="w-[300px] space-y-3 px-4">
+              <Form onValue={signup} className="w-[300px] space-y-3 px-4">
                 <Input
+                 
                     name="fullname"
                     placeholder="Enter your name"
                 />
 
                 <Input 
+                   type="email"
                     name="email" 
                     placeholder="Enter Emal"
                 />
  
                 <Input 
+                    type="tel"
                     name="mobile"
                     placeholder="Enter mobile"
                 />
 
                 <Input 
+                       type="password"
                     name="password" 
                     placeholder="Enter password"
                 />
 
                 <div className="w-full flex justify-center "> 
-                  <button 
+                  <button type="submit"
                     className=" w-full bg-blue-500 py-2 hover:bg-blue-600 text-xl rounded font-semibold text-white ">
-                    Login
+                    Signup
                   </button>
                 </div>
                 

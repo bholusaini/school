@@ -1,12 +1,24 @@
-import Form from "./shared/form"
+import Form, { type FormDataType } from "./shared/form"
 import Input from "./shared/input"
 import login from "../assets/login.jpg"
 import logo from "../assets/logo.avif"
 import Card from "./shared/card"
 import {Link} from "react-router-dom"
-
+import axios from "axios"
+import { toast } from "react-toastify"
+   
 
 const Login = () => {
+   const handleLoginForm  = async (values:FormDataType)=>{
+   try{
+     const  {data} = await axios.post("http://localhost:8080/auth/login",values)
+     toast.success(data.message);
+   }
+   catch(err:any)
+   {
+    toast.error(err.message);
+   }
+   }
   return (
     <div className="w-full h-screen overflow-hidden animate__animated animate-fadeIn">
       <div className=" flex justify-center items-center h-screen">
@@ -19,7 +31,7 @@ const Login = () => {
                 <h1 className="text-2xl font-bold text-black">School</h1>
               </div>
               
-              <Form className="w-[300px] space-y-3 px-4">
+              <Form  onValue={handleLoginForm} className="w-[300px] space-y-3 px-4">
                 <Input 
                 name="email" 
                 placeholder="Enter Emal"
