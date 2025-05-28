@@ -1,9 +1,9 @@
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 import 'remixicon/fonts/remixicon.css'
 
 
 interface DrawerInterface {
-    children?: string
+    children?: ReactNode
     title?: string
     open?: boolean
     onClose?: ()=>void
@@ -18,7 +18,7 @@ const Drawer: FC<DrawerInterface> = ({key=0,children="Your content goes here", t
                 right: open ? 0 : '-50%',
                 transition: '0.3s'
             }} 
-            className='shadow-lg fixed top-0 w-6/12 h-full overflow-auto p-8 z-[10000] space-y-4'
+            className='shadow-lg bg-white fixed top-0 w-6/12 h-full overflow-auto p-8 z-[10000] space-y-4'
         >
             <h1 className='text-lg font-semibold'>{title}</h1>
             <div className='border-b border-gray-100 -mx-8'/>

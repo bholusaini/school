@@ -1,12 +1,7 @@
-import { Link, useLocation ,Outlet} from "react-router-dom"
+import { Link,Outlet} from "react-router-dom"
 import Card from "../shared/card"
 const Layout = () => {
- const {pathname} = useLocation()
-  const getPathname = (path:string)=>{
-    const fristPath = path.split('/').pop()
-    const finalPath = fristPath?.split("-").join(" ")
-    return finalPath
-  }
+ 
 
   return (
     <div className="min-h-screen  bg-gray-100">
@@ -56,27 +51,7 @@ const Layout = () => {
         </aside>
 
         <section className="h-screen  flex flex-col ml-[150px]" style={{width:`calc(100%-150px)`}}>
-           <div className="h-2 p-4">
-             <Card>
-                <div className="flex justify-between">
-                  <div>
-                     <i className="ri-arrow-left-line"></i>
-                     <label>{getPathname(pathname)}</label>
-                  </div>
-                     
-                     <div className="flex bg-rose-300 hover:bg-rose-500 rounded px-3 py-2">
-                       <i className="ri-add-fill"></i>
-                         Admition
-                     </div>
-                    
-                </div>
-             </Card>
-           </div>
-
-            
-        <div className="p-4 mt-18 ">
-         <Outlet/>
-        </div>
+        <Outlet/>
         </section>
 
       
