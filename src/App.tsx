@@ -4,6 +4,8 @@ import 'animate.css';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import { ToastContainer } from 'react-toastify';
+import Home from './component/Home';
+import Layout from './component/app/Layout';
 const App = () => {
   return (
     <div>
@@ -12,6 +14,8 @@ const App = () => {
       <Routes>
         <Route path='/login' element={<Login/>} />
         <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/app' element={<Layout/>}/>
       </Routes>
       <ToastContainer/>
     </BrowserRouter>

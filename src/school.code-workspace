@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../school-api"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "school"
+	}
+}
