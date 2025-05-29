@@ -8,6 +8,7 @@ import Home from './component/Home';
 import Layout from './component/app/Layout';
 import Student from './component/app/Student';
 import Dashboard from './component/app/Dashboard';
+import Class from './component/app/Class';
 const App = () => {
   return (
     <div>
@@ -19,7 +20,9 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/app' element={<Layout/>}>
           <Route path='dashboard' element={<Dashboard/>}/>
+          <Route path='' element={<Dashboard/>}/>
           <Route path='student' element={<Student/>}/>
+          <Route path='class' element={<Class/>}/>
         </Route>
       </Routes>
       <ToastContainer/>

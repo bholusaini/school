@@ -26,7 +26,7 @@ const Student = () => {
                 <label>{getPathname(pathname)}</label>
             </div>
                 
-            <div className="flex bg-rose-300 hover:bg-rose-500 rounded px-3 py-2" onClick={()=>setOpen(!open)}>
+            <div className="flex bg-cyan-300 hover:bg-cyan-500 rounded px-3 py-2" onClick={()=>setOpen(!open)}>
               <i className="ri-add-fill"></i>
                 Admition
             </div>              
@@ -135,6 +135,8 @@ const Student = () => {
                 <option>C</option>
                 </select>
             </div>
+
+            <Button type="warning">Take Admition Now</Button>
         </Form>
       </Drawer>             
 
