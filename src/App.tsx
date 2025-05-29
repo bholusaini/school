@@ -12,6 +12,7 @@ import Class from './component/app/Class';
 import Subject from './component/app/Subject';
 import Teacher from './component/app/Teacher';
 import Employees from './component/app/Employees';
+import Expenses from './component/app/Expenses';
 const App = () => {
   return (
     <div>
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='subject' element={<Subject/>}/>
           <Route path='teacher' element={<Teacher/>}/>
           <Route path='employees' element={<Employees/>}/>
+          <Route path='expenses' element={<Expenses/>}/>
         </Route>
       </Routes>
       <ToastContainer/>
