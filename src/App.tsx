@@ -11,6 +11,7 @@ import Dashboard from './component/app/Dashboard';
 import Class from './component/app/Class';
 import Subject from './component/app/Subject';
 import Teacher from './component/app/Teacher';
+import Employees from './component/app/Employees';
 const App = () => {
   return (
     <div>
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='class' element={<Class/>}/>
           <Route path='subject' element={<Subject/>}/>
           <Route path='teacher' element={<Teacher/>}/>
+          <Route path='employees' element={<Employees/>}/>
         </Route>
       </Routes>
       <ToastContainer/>
