@@ -6,9 +6,11 @@ import { useLocation } from "react-router-dom"
 import Drawer from "../shared/drawer"
 import Form from "../shared/form"
 import Input from "../shared/input"
+import { useState } from "react"
 
 const Student = () => {
   const {pathname} = useLocation()
+  const [open,setOpen] = useState(false)
   const getPathname = (path:string)=>{
     const fristPath = path.split('/').pop()
     const finalPath = fristPath?.split("-").join(" ")
@@ -24,7 +26,7 @@ const Student = () => {
                 <label>{getPathname(pathname)}</label>
             </div>
                 
-            <div className="flex bg-rose-300 hover:bg-rose-500 rounded px-3 py-2">
+            <div className="flex bg-rose-300 hover:bg-rose-500 rounded px-3 py-2" onClick={()=>setOpen(!open)}>
               <i className="ri-add-fill"></i>
                 Admition
             </div>              
@@ -32,7 +34,11 @@ const Student = () => {
         </Card>
       </div>
 
-      <Drawer title="New admission">         
+      <Drawer 
+      title="New admission"
+      open={open}
+      onClose={()=>setOpen(false)}
+      >         
         <Form className=" grid grid-cols-2 gap-6"> 
             <div className=" w-full flex flex-col gap-2">
               <label>Student`s Name</label>
