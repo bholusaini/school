@@ -9,6 +9,7 @@ import Layout from './component/app/Layout';
 import Student from './component/app/Student';
 import Dashboard from './component/app/Dashboard';
 import Class from './component/app/Class';
+import Subject from './component/app/Subject';
 const App = () => {
   return (
     <div>
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='' element={<Dashboard/>}/>
           <Route path='student' element={<Student/>}/>
           <Route path='class' element={<Class/>}/>
+          <Route path='subject' element={<Subject/>}/>
         </Route>
       </Routes>
       <ToastContainer/>
