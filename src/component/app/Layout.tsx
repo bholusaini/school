@@ -29,7 +29,7 @@ const Layout = () => {
               </div>
                <div  className="w-fit px-3 py-3 flex flex-col gap-1 justify-center items-center text-center rounded bg-gray-50 hover:bg-gray-200 ">
                 <i className="ri-dashboard-line"></i>
-                <Link to={"/dashboard" }  >Dashboard</Link>
+                <Link to={"/app/teacher" }  >Teacher</Link>
               </div>
                <div  className="w-fit px-3 py-3 flex flex-col gap-1 justify-center items-center text-center rounded bg-gray-50 hover:bg-gray-200 ">
                 <i className="ri-dashboard-line"></i>

@@ -9,7 +9,7 @@ import Input from "../shared/input"
 import { useState } from "react"
 import IconButton from "../shared/iconButton"
 
-const Student = () => {
+const Teacher = () => {
   const {pathname} = useLocation()
   const [open,setOpen] = useState(false)
   const getPathname = (path:string)=>{
@@ -22,38 +22,31 @@ const Student = () => {
       <div className="h-2 p-4">
         <Card>
           <div className="flex justify-between">
-           <div className="flex justify-center items-center gap-2"> 
+            <div className="flex justify-center items-center gap-2"> 
                <IconButton icon="arrow-left-line"></IconButton>
                 <label>{getPathname(pathname)}</label>
             </div>
                 
             <div className="flex bg-cyan-300 hover:bg-cyan-500 rounded px-3 py-2" onClick={()=>setOpen(!open)}>
               <i className="ri-add-fill"></i>
-                Admition
+               New Teacher
             </div>              
           </div>
         </Card>
       </div>
 
       <Drawer 
-      title="New admission"
+      title="Add a New Teacher"
       open={open}
       onClose={()=>setOpen(false)}
       >         
         <Form className=" grid grid-cols-2 gap-6"> 
             <div className=" w-full flex flex-col gap-2">
-              <label>Student`s Name</label>
-                <Input name="studentname" type="text" placeholder="Enter student name"/>
+              <label>Teacher`s Name</label>
+                <Input name="Teachername" type="text" placeholder="Enter Teacher name"/>
               </div>
           
-            <div className=" w-full flex flex-col gap-2">
-              <label>Father`s Name</label>
-                <Input name="fathername" type="text" placeholder="Enter father's name"/>
-            </div>
-            <div className=" w-full flex flex-col gap-2">
-              <label>Mother`s Name</label>
-                <Input name="mother'sname" type="text" placeholder="Enter mother's name"/>
-            </div>
+            
 
             <div className=" w-full flex flex-col gap-2">
               <label>Gender</label>
@@ -89,12 +82,11 @@ const Student = () => {
             </div>
             
             <div className=" w-full flex flex-col gap-2">
-              <label>Class</label>
+              <label>Qualification</label>
                 <select  className="border border-gray-300 px-3 py-2"> 
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>                        
+                <option>Graduate</option>
+                <option>Masters</option>
+                                      
                 </select>
             </div>
 
@@ -129,20 +121,21 @@ const Student = () => {
             </div>
 
             <div className=" w-full flex flex-col gap-2">
-              <label>Section</label>
+              <label>Subjects</label>
                 <select  className="border border-gray-300 px-3 py-2"> 
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
+                <option>English</option>
+                <option>Math</option>
+                <option>Science</option>
                 </select>
             </div>
 
-            <Button type="warning">Take Admition Now</Button>
+            <Button type="warning">Add New teacher</Button>
         </Form>
       </Drawer>             
 
       <div className="p-4 mt-18 ">
         <div className=" min-h-screen grid grid-cols-4 gap-2  p-4 bg-white rounded">        
+          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -157,14 +150,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -179,14 +172,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -201,14 +194,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -223,14 +216,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -245,14 +238,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -267,14 +260,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -289,14 +282,14 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
-
             </div>
-          </Card>
+          </Card>          
           <Card >
             <div className="flex flex-col gap-2">
                 
@@ -311,12 +304,78 @@ const Student = () => {
                   <label >bksarswal@gmail.com</label>
                   <label >7092428976</label>
                 </div>
-
-                <div className="flex justify-between">
-                  <Button type="secondary">Class-6</Button>
-                  <Button type="danger">Roll-12</Button>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
               </div>
+            </div>
+          </Card>          
+          <Card >
+            <div className="flex flex-col gap-2">
+                
+                <div className="w-full flex justify-center">
+                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
+                  <Avatar image={logo} size="lg"></Avatar>
+                  </div> 
+                </div>
 
+                <div className="flex flex-col gap-1 items-center"> 
+                  <h1 className="text-xl  font-bold">bksarswal</h1>
+                  <label >bksarswal@gmail.com</label>
+                  <label >7092428976</label>
+                </div>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
+              </div>
+            </div>
+          </Card>          
+          <Card >
+            <div className="flex flex-col gap-2">
+                
+                <div className="w-full flex justify-center">
+                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
+                  <Avatar image={logo} size="lg"></Avatar>
+                  </div> 
+                </div>
+
+                <div className="flex flex-col gap-1 items-center"> 
+                  <h1 className="text-xl  font-bold">bksarswal</h1>
+                  <label >bksarswal@gmail.com</label>
+                  <label >7092428976</label>
+                </div>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
+              </div>
+            </div>
+          </Card>          
+          <Card >
+            <div className="flex flex-col gap-2">
+                
+                <div className="w-full flex justify-center">
+                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
+                  <Avatar image={logo} size="lg"></Avatar>
+                  </div> 
+                </div>
+
+                <div className="flex flex-col gap-1 items-center"> 
+                  <h1 className="text-xl  font-bold">bksarswal</h1>
+                  <label >bksarswal@gmail.com</label>
+                  <label >7092428976</label>
+                </div>
+                <div className="flex justify-center gap-2">
+                  <label className="border border-gray-200 px-2 py-1">sci</label>
+                  <label className="border border-gray-200 px-2 py-1">Eng</label>
+                  <label className="border border-gray-200 px-2 py-1">Mat</label>
+                  <label className="border border-gray-200 px-2 py-1">Com</label>
+              </div>
             </div>
           </Card>          
         </div>
@@ -325,4 +384,4 @@ const Student = () => {
   )
 }
 
-export default Student
+export default Teacher
