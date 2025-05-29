@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="../style/common.css" />
+</head>
+<body>
+    <select class="bg-white p-3 text-gray-500 fixed top-0 left-0 w-[144px] shadow-lg z-[20000]">
+        <option>2024-25</option>
+        <option>2023-24</option>
+        <option>2022-23</option>
+    </select>
+
+    <aside id="sidenav" class="fixed top-12 left-0 w-[150px] h-full overflow-auto flex flex-col items-center py-8 gap-8">
+        <a href="./dashboard.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-line-chart-line text-lg"></i>
+                <label class="text-[12px]">Dashboard</label>
+            </button>
+        </a>
+
+        <a href="./students.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-user-line text-lg"></i>
+                <label class="text-[12px]">Students</label>
+            </button>
+        </a>
+
+        <a href="./subjects.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-bookmark-line text-lg"></i>
+                <label class="text-[12px]">Subjects</label>
+            </button>
+        </a>
+
+        <a href="./classes.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-artboard-line text-lg"></i>
+                <label class="text-[12px]">Classes</label>
+            </button>
+        </a>
+
+        <a href="./classes.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-patreon-line text-lg"></i>
+                <label class="text-[12px]">Payments</label>
+            </button>
+        </a>
+
+        <a href="./teachers.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-user-2-line text-lg"></i>
+                <label class="text-[12px]">Teachers</label>
+            </button>
+        </a>
+
+        <a href="./employees.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-empathize-line text-lg"></i>
+                <label class="text-[12px]">Employees</label>
+            </button>
+        </a>
+
+        <a href="./expenses.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-wallet-3-line text-lg"></i>
+                <label class="text-[12px]">Expenses</label>
+            </button>
+        </a>
+
+        <a href="./salary.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-bank-line text-lg"></i>
+                <label class="text-[12px]">Salaries</label>
+            </button>
+        </a>
+
+        <a href="./settings.html">
+            <button class="flex flex-col items-center justify-center bg-white w-[80px] h-[80px] rounded hover:bg-rose-50 hover:font-medium">
+                <i class="ri-settings-2-line text-lg"></i>
+                <label class="text-[12px]">Settings</label>
+            </button>
+        </a>
+    </aside>
+
+    <section class="ml-[150px] p-8 space-y-8" style="width: calc(100% - 150px)">
+        <div class="bg-white p-12 rounded-xl flex flex-col items-center gap-1">
+            <img src="/images/logo.png" class="w-30" />
+            <h1 class="text-2xl font-medium">CodingOtt International School</h1>
+            <p class="text-gray-500 text-lg">Make you child creative</p>
+            <p class="text-gray-500 text-sm">www.codeschool.com</p>
+        </div>
+        
+        <div class="p-4 bg-white rounded-lg flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <button class="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full">
+                    <i class="ri-arrow-left-line"></i>
+                </button>
+                <h1 class="text-lg font-medium">Students</h1>
+            </div>
+
+            <div class="space-x-4">
+                <input 
+                    type="search"
+                    class="py-2 px-3 rounded border border-gray-200 w-[300px] focus:outline-none"
+                    placeholder="Search this content"
+                />
+                
+                <select class="px-6 py-2 rounded border border-gray-300 font-medium">
+                    <option>Export</option>
+                    <option value="pdf">PDF</option>
+                    <option value="xls">XLS</option>
+                </select>
+
+                <button onclick="openDrawer()" class="transition hover:scale-105 bg-linear-to-t from-pink-500 to-rose-500 text-white font-medium px-6 py-2 rounded">
+                    <i class="ri-user-add-line"></i>
+                    Admission
+                </button>
+            </div>
+        </div>
+
+        <div class="p-8 bg-white rounded-lg grid grid-cols-4 gap-8">
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg rounded-lg flex flex-col justify-center items-center p-6 gap-4">
+                <img src="../images/student.png" class="w-[100px] h-[100px] rounded-full object-cover" />
+                <div class="text-center">
+                    <div class="mb-5 flex flex-col">
+                        <h1 class="text-lg font-medium">Ravi ranjan</h1>
+                        <label class="text-gray-600">student@mail.com</label>
+                        <label class="text-gray-600 text-xs">+91 0123456789</label>
+                    </div>
+                    <div class="space-x-3">
+                        <button class="bg-linear-to-t from-blue-500 to-purple-500 text-white font-medium py-1 px-3 rounded">
+                            Class - 6
+                        </button>
+    
+                        <button class="bg-linear-to-t from-rose-500 to-orange-500 text-white font-medium py-1 px-3 rounded">
+                            Roll - 12
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="drawer" class="fixed top-0 right-0 h-full bg-white shadow-2xl overflow-auto" style="width: 0; transition: 0.3s">
+            <div class="flex justify-between items-center p-6 border-b border-b-gray-100">
+                <h1 class="text-lg font-medium">New admission</h1>
+                <i class="ri-close-circle-fill" onclick="closeDrawer()"></i>
+            </div>
+
+            <form class="grid grid-cols-2 gap-8 p-6" onsubmit="createAdmission(event)">
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Student`s Name</label>
+                    <input 
+                        id="studentName" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Enter student`s name" 
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Father`s Name</label>
+                    <input 
+                        id="fatherName" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Enter father`s name" 
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Mother`s Name</label>
+                    <input 
+                        id="motherName" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Enter father`s name" 
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Gender</label>
+                    <select id="gender" class="border border-gray-300 rounded px-3 py-2" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">DOB</label>
+                    <input 
+                        id="dob" 
+                        type="date"
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Religion</label>
+                    <select id="religion" class="border border-gray-300 rounded px-3 py-2" required>
+                        <option value="hindu">Hindu</option>
+                        <option value="muslim">Muslim</option>
+                        <option value="christian">Christian</option>
+                        <option value="jain">Jain</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Mobile</label>
+                    <input 
+                        id="mobile" 
+                        type="number"
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Enter mobile number"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Email</label>
+                    <input 
+                        id="email" 
+                        type="email"
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Enter email id"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Class</label>
+                    <select id="class" class="border border-gray-300 rounded px-3 py-2" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Section</label>
+                    <select id="section" class="border border-gray-300 rounded px-3 py-2" required>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Address</label>
+                    <input 
+                        id="address" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="4, main road, demo gali, 64"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">City</label>
+                    <input 
+                        id="city" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="City"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">State</label>
+                    <input 
+                        id="state" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="State"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Country</label>
+                    <input 
+                        id="country" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Country"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Pincode</label>
+                    <input 
+                        id="pincode"
+                        type="number" 
+                        required 
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="Pincode"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-gray-600 text-base font-medium">Previous School</label>
+                    <input 
+                        id="previousSchool"
+                        class="border border-gray-300 rounded px-3 py-2" 
+                        placeholder="(Optional) - Name of previous school"
+                    />
+                </div>
+
+                <div>
+                    <button class="transition hover:scale-105 bg-linear-to-t from-pink-500 to-rose-500 text-white font-medium px-12 py-2.5 rounded">
+                        <i class="ri-arrow-right-line"></i> 
+                        Take admission now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="../script/common.js"></script>
+    <script src="../script/student.js"></script>
+</body>
+</html>

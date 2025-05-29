@@ -32,7 +32,7 @@ const Salaries = () => {
                 </div>
 
             </Card>
-        </div>
+         </div>
 
        
          <Drawer 

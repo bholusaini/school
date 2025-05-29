@@ -43,6 +43,11 @@ const Layout = () => {
                 <i className="ri-dashboard-line"></i>
                 <Link to={"/app/salaries" }  >Salaries</Link>
               </div>
+
+               <div  className="w-fit px-3 py-3 flex flex-col gap-1 justify-center items-center text-center rounded bg-gray-50 hover:bg-gray-200 ">
+                <i className="ri-dashboard-line"></i>
+                <Link to={"/app/settings" }  >Settings</Link>
+              </div>
         
                
         

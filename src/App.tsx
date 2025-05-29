@@ -14,6 +14,7 @@ import Teacher from './component/app/Teacher';
 import Employees from './component/app/Employees';
 import Expenses from './component/app/Expenses';
 import Salaries from './component/app/Salaries';
+import Settings from './component/app/Settings';
 const App = () => {
   return (
     <div>
@@ -33,6 +34,7 @@ const App = () => {
           <Route path='employees' element={<Employees/>}/>
           <Route path='expenses' element={<Expenses/>}/>
           <Route path='salaries' element={<Salaries/>}/>
+          <Route path='settings' element={<Settings/>}/>
         </Route>
       </Routes>
       <ToastContainer/>
