@@ -13,25 +13,23 @@ const Class = () => {
     const {pathname} = useLocation()
 
     const getPathname = (path:string)=>{
-           const fristPath = path.split("/").pop()
-          
-           return fristPath
+        const fristPath = path.split("/").pop()
+        return fristPath
     }
   return (
     <>
-        <div className="p-4">
-            
-        <Card>
-            <div className="flex flex-col items-center gap-2 ">
-                <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
-                <h1 className=" font-semibold text-black">CodingOtt International School</h1>
-                <p>Make you child creative</p>
-                <small>www.codeschool.com</small>
-            </div>
-        </Card>
+        <div className="p-4">            
+            <Card>
+                <div className="flex flex-col items-center gap-2 ">
+                    <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
+                    <h1 className=" font-semibold text-black">CodingOtt International School</h1>
+                    <p>Make you child creative</p>
+                    <small>www.codeschool.com</small>
+                </div>
+            </Card>
         </div>
         
-         <div className="p-4">
+        <div className="p-4">
             <Card >
                 <div className="flex justify-between">
                     <div  className="flex justify-center items-center gap-2 ">
@@ -46,167 +44,147 @@ const Class = () => {
             </Card>
         </div>
 
-       
-         <Drawer 
+        <Drawer 
             title="Add a new class" 
             open={open}
             onClose={()=>setOpen(false)}
-        >
-          <Form className="grid grid-cols-2 gap-4">
-           
+         >
+          <Form className="grid grid-cols-2 gap-4">           
            <div className="flex flex-col gap-2 "> 
              <label >Class</label>
-                <Input name="class" type="text" placeholder="class"/>
+             <Input name="class" type="text" placeholder="class"/>
            </div>
 
            <div className="flex flex-col gap-2 "> 
              <label >Fee</label>
-                <Input name="fee" type="number" placeholder="10000"/>
+             <Input name="fee" type="number" placeholder="10000"/>
            </div>
+
            <div className="flex flex-col gap-2 "> 
-             <label >Class Teacher's</label>
-               <select className=" border border-gray-200 px-3 py-2"> 
-                 <option>Er.Saurav</option>
-                 <option>Er.Saurav</option>
-                 <option>Er.Saurav</option>
-                 <option>Er.Saurav</option>
-                 <option>Er.Saurav</option>
-               </select>
+                <label >Class Teacher's</label>
+                <select className=" border border-gray-200 px-3 py-2"> 
+                    <option>Er.Saurav</option>
+                    <option>Er.Saurav</option>
+                    <option>Er.Saurav</option>
+                    <option>Er.Saurav</option>
+                    <option>Er.Saurav</option>
+                </select>
            </div>
         
            <div className="flex flex-col gap-2 "> 
              <label >Sections's</label>
              <Input name="section" type="text" placeholder="A,B,C,D" />
            </div>
-           
-           <div className="w-fit"><Button type="danger"> Add Now</Button></div>
-           
+
+           <div className="w-fit"><Button type="danger"> Add Now</Button></div>           
           </Form>
         </Drawer>
 
-
         <div className="p-4"> 
             <Card>
-            <div className="grid grid-cols-4 gap-8 ">
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-                <Card>
-                <div className="flex flex-col items-center gap-2">
-                    <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
-                <div className="flex justify-center items-center gap-4">
-                        <IconButton type="success" icon="edit-line"/>
-                        <IconButton type="danger" icon="delete-bin-line"/>
-                    </div>
-                    </div>
-                </Card>
-            
-            </div>
+                <div className="grid grid-cols-4 gap-8 ">
+
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>    
+                                    
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>                    
+                
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>    
+
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>                    
+                
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>    
+
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>                    
+                
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>    
+
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>                    
+                
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>    
+
+                    <Card>
+                        <div className="flex flex-col items-center gap-2">
+                            <div className="bg-purple-600 p-6 rounded-b-md text-white text-2xl font-bold">kg</div>
+                            <div className="flex justify-center items-center gap-4">
+                                <IconButton type="success" icon="edit-line"/>
+                                <IconButton type="danger" icon="delete-bin-line"/>
+                            </div>
+                        </div>
+                    </Card>                    
+                
+                </div>
             </Card>
         </div>
     </>

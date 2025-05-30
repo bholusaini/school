@@ -18,10 +18,10 @@ const Employees = () => {
     const finalPath = fristPath?.split("-").join(" ")
     return finalPath
   }
+
   return (
     <>
-       <div className="p-2">
-            
+      <div className="p-2">            
         <Card>
             <div className="flex flex-col items-center gap-2 ">
                 <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
@@ -30,19 +30,19 @@ const Employees = () => {
                 <small>www.codeschool.com</small>
             </div>
         </Card>
-        </div>
-        
-       <div className="p-2">
+      </div>
+      
+      <div className="p-2">
         <Card>
           <div className="flex justify-between">
             <div className="flex justify-center items-center gap-2"> 
-               <IconButton icon="arrow-left-line"></IconButton>
+                <IconButton icon="arrow-left-line"></IconButton>
                 <label>{getPathname(pathname)}</label>
             </div>
                 
             <div className="flex bg-cyan-300 hover:bg-cyan-500 rounded px-3 py-2" onClick={()=>setOpen(!open)}>
               <i className="ri-add-fill"></i>
-               New Employees
+                New Employees
             </div>              
           </div>
         </Card>
@@ -57,48 +57,48 @@ const Employees = () => {
             <div className=" w-full flex flex-col gap-2">
               <label>Employees`s Name</label>
                 <Input name="employeesname" type="text" placeholder="Enter Employees name"/>
-              </div>
+            </div>
         
             <div className=" w-full flex flex-col gap-2">
               <label>Gender</label>
-                <select className="border border-gray-300 px-3 py-2"> 
-                <option>Male</option>
-                <option>Famel</option>
-                <option>Others</option>
-                </select>
+              <select className="border border-gray-300 px-3 py-2"> 
+                  <option>Male</option>
+                  <option>Famel</option>
+                  <option>Others</option>
+              </select>
             </div>
+            
             <div className=" w-full flex flex-col gap-2">
               <label>DOB</label>
-                <Input name="dob" type="date" />
+              <Input name="dob" type="date" />
             </div>
-
           
             <div className=" w-full flex flex-col gap-2">
               <label>Religion</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>Hindu</option>
                 <option>Jain</option>
                 <option>Muslim</option>
                 <option>Other</option>
-                </select>
+              </select>
             </div>
 
             <div className=" w-full flex flex-col gap-2">
               <label>Mobile</label>
-                <Input name="mobile" type="tel" placeholder="Enter mobile number" />
+              <Input name="mobile" type="tel" placeholder="Enter mobile number" />
             </div>
+
             <div className=" w-full flex flex-col gap-2">
               <label>Email</label>
-                <Input name="email" type="email" placeholder="Enter email" />
+              <Input name="email" type="email" placeholder="Enter email" />
             </div>
             
             <div className=" w-full flex flex-col gap-2">
               <label>Qualification</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>Graduate</option>
-                <option>Masters</option>
-                                      
-                </select>
+                <option>Masters</option>                                      
+              </select>
             </div>
 
             <div className=" w-full flex flex-col gap-2">
@@ -124,17 +124,15 @@ const Employees = () => {
             <div className=" w-full flex flex-col gap-2">
               <label>Pincode</label>
               <Input name="pincode" type="number" placeholder="Enter pincode" />
-            </div> 
-
-            
+            </div>             
 
             <div className=" w-full flex flex-col gap-2">
               <label>Designation</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>Peon</option>
                 <option>Manager</option>
                 <option>Counsiller</option>
-                </select>
+              </select>
             </div>
 
             <Button type="warning">Add New Employees</Button>

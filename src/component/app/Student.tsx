@@ -20,8 +20,7 @@ const Student = () => {
   }
   return (
     <>
-       <div className="p-4">
-            
+      <div className="p-4">            
         <Card>
             <div className="flex flex-col items-center gap-2 ">
                 <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
@@ -30,13 +29,13 @@ const Student = () => {
                 <small>www.codeschool.com</small>
             </div>
         </Card>
-        </div>
-        
-         <div className="p-4">
+      </div>
+      
+      <div className="p-4">
         <Card>
           <div className="flex justify-between">
-           <div className="flex justify-center items-center gap-2"> 
-               <IconButton icon="arrow-left-line"></IconButton>
+            <div className="flex justify-center items-center gap-2"> 
+                <IconButton icon="arrow-left-line"></IconButton>
                 <label>{getPathname(pathname)}</label>
             </div>
                 
@@ -56,59 +55,61 @@ const Student = () => {
         <Form className=" grid grid-cols-2 gap-6"> 
             <div className=" w-full flex flex-col gap-2">
               <label>Student`s Name</label>
-                <Input name="studentname" type="text" placeholder="Enter student name"/>
-              </div>
+              <Input name="studentname" type="text" placeholder="Enter student name"/>
+            </div>
           
             <div className=" w-full flex flex-col gap-2">
               <label>Father`s Name</label>
-                <Input name="fathername" type="text" placeholder="Enter father's name"/>
+              <Input name="fathername" type="text" placeholder="Enter father's name"/>
             </div>
+
             <div className=" w-full flex flex-col gap-2">
               <label>Mother`s Name</label>
-                <Input name="mother'sname" type="text" placeholder="Enter mother's name"/>
+              <Input name="mother'sname" type="text" placeholder="Enter mother's name"/>
             </div>
 
             <div className=" w-full flex flex-col gap-2">
               <label>Gender</label>
-                <select className="border border-gray-300 px-3 py-2"> 
+              <select className="border border-gray-300 px-3 py-2"> 
                 <option>Male</option>
                 <option>Famel</option>
                 <option>Others</option>
-                </select>
-            </div>
-            <div className=" w-full flex flex-col gap-2">
-              <label>DOB</label>
-                <Input name="dob" type="date" />
+              </select>
             </div>
 
+            <div className=" w-full flex flex-col gap-2">
+              <label>DOB</label>
+              <Input name="dob" type="date" />
+            </div>
           
             <div className=" w-full flex flex-col gap-2">
               <label>Religion</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>Hindu</option>
                 <option>Jain</option>
                 <option>Muslim</option>
                 <option>Other</option>
-                </select>
+              </select>
             </div>
 
             <div className=" w-full flex flex-col gap-2">
               <label>Mobile</label>
-                <Input name="mobile" type="tel" placeholder="Enter mobile number" />
+              <Input name="mobile" type="tel" placeholder="Enter mobile number" />
             </div>
+
             <div className=" w-full flex flex-col gap-2">
               <label>Email</label>
-                <Input name="email" type="email" placeholder="Enter email" />
+              <Input name="email" type="email" placeholder="Enter email" />
             </div>
             
             <div className=" w-full flex flex-col gap-2">
               <label>Class</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>                        
-                </select>
+              </select>
             </div>
 
             <div className=" w-full flex flex-col gap-2">
@@ -143,11 +144,11 @@ const Student = () => {
 
             <div className=" w-full flex flex-col gap-2">
               <label>Section</label>
-                <select  className="border border-gray-300 px-3 py-2"> 
+              <select  className="border border-gray-300 px-3 py-2"> 
                 <option>A</option>
                 <option>B</option>
                 <option>C</option>
-                </select>
+              </select>
             </div>
 
             <Button type="warning">Take Admition Now</Button>

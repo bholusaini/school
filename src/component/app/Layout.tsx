@@ -57,40 +57,29 @@ const Layout = () => {
       href:"/app/Settings",
       label:"Settings"
 
-    },
-    
+    },    
   ]
  
   return (
     <div className="min-h-screen  bg-gray-100">
+      <aside className="  h-screen  fixed left-0 overflow-auto bg-linear-to-r from-purple-500 via-indigo-500 to-blue-500  " style={{width:"150px"}}>                         
+        <div className=" w-[100px] flex flex-col  items-center gap-8 text-center ml-4 mt-4">
+          {
+            Menu.map((item,index)=>(
+              <Link to={item.href}  key={index} className="w-full  px-3 py-3 flex flex-col gap-1 items-center text-center rounded bg-gray-50 hover:bg-gray-200 " >  
+                <i className={`ri-${item.icon}`}></i>
+                <label>
+                {item.label}
+                </label>
+              </Link>            
+            ))
+          }      
+        </div>        
+      </aside>
 
-        <aside className="  h-screen  fixed left-0 overflow-auto bg-linear-to-r from-purple-500 via-indigo-500 to-blue-500  " style={{width:"150px"}}>
-            
-             
-             <div className=" w-[100px] flex flex-col  items-center gap-8 text-center ml-4 mt-4">
-
-              {
-                Menu.map((item,index)=>(
-
-                  <Link to={item.href}  key={index} className="w-full  px-3 py-3 flex flex-col gap-1 items-center text-center rounded bg-gray-50 hover:bg-gray-200 " >  
-                   <i className={`ri-${item.icon}`}></i>
-                   <label>
-                    {item.label}
-                   </label>
-                  </Link>
-            
-                ))
-              }
-      
-             </div>
-        
-        </aside>
-
-        <section className="h-screen  flex flex-col ml-[150px]" style={{width:`calc(100%-150px)`}}>
+      <section className="h-screen  flex flex-col ml-[150px]" style={{width:`calc(100%-150px)`}}>
         <Outlet/>
-        </section>
-
-      
+      </section>      
     </div>
   )
 }

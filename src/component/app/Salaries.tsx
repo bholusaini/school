@@ -12,7 +12,6 @@ import schoolLogo from "../../assets/school.png"
 const Salaries = () => {
     const [open,setOpen] =useState(false)
     const {pathname} = useLocation()
-
     const getPathname = (path:string)=>{
            const fristPath = path.split("/").pop()
           
@@ -20,24 +19,23 @@ const Salaries = () => {
     }
   return (
     <>
-         <div className="p-4">
-            
-        <Card>
-            <div className="flex flex-col items-center gap-2 ">
-                <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
-                <h1 className=" font-semibold text-black">CodingOtt International School</h1>
-                <p>Make you child creative</p>
-                <small>www.codeschool.com</small>
-            </div>
-        </Card>
+        <div className="p-4">            
+            <Card>
+                <div className="flex flex-col items-center gap-2 ">
+                    <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
+                    <h1 className=" font-semibold text-black">CodingOtt International School</h1>
+                    <p>Make you child creative</p>
+                    <small>www.codeschool.com</small>
+                </div>
+            </Card>
         </div>
         
-         <div className="p-4">
+        <div className="p-4">
             <Card >
                 <div className="flex justify-between">
                     <div  className="flex justify-center items-center gap-2 ">
-                     <IconButton icon="arrow-left-fill"/>
-                     <label>{getPathname(pathname)}</label>
+                        <IconButton icon="arrow-left-fill"/>
+                        <label>{getPathname(pathname)}</label>
                     </div>
                     <div>
                         <Button onClick={()=>setOpen(!open)}> + Add Salary</Button>
@@ -45,52 +43,45 @@ const Salaries = () => {
                 </div>
 
             </Card>
-         </div>
-
-       
-         <Drawer 
+        </div>
+        
+        <Drawer 
             title="New Salary" 
             open={open}
             onClose={()=>setOpen(false)}
         >
-          <Form className="grid grid-cols-2 gap-4">
-           
-           <div className="flex flex-col gap-2 "> 
-             <label >Employee</label>
-                <Input name="employee" type="text" placeholder=" bksarswal"/>
-           </div>
+            <Form className="grid grid-cols-2 gap-4">            
+                <div className="flex flex-col gap-2 "> 
+                    <label >Employee</label>
+                    <Input name="employee" type="text" placeholder=" bksarswal"/>
+                </div>
 
-           <div className="flex flex-col gap-2 "> 
-             <label >Salary</label>
-                <Input name="salary" type="number" placeholder="0.00"/>
-           </div>
+                <div className="flex flex-col gap-2 "> 
+                    <label >Salary</label>
+                    <Input name="salary" type="number" placeholder="0.00"/>
+                </div>
 
-           <div className="flex flex-col gap-2 "> 
-             <label >Description</label>
-                <Input name="description" type="text"/>
+                <div className="flex flex-col gap-2 "> 
+                    <label >Description</label>
+                    <Input name="description" type="text"/>                    
+                </div>
+
+                <div className="flex flex-col gap-2 "> 
+                    <label >Date</label>
+                    <Input name="date" type="date"/>
+                </div>            
                 
-           </div>
-
-           <div className="flex flex-col gap-2 "> 
-             <label >Date</label>
-
-                <Input name="date" type="date"/>
-           </div>
-          
-           
-           <div className="w-fit"><Button type="danger"> Add Now</Button></div>
-           
-          </Form>
+                <div className="w-fit"><Button type="danger"> Add Now</Button></div>            
+            </Form>
         </Drawer>
-
 
         <div className="p-4"> 
             <Card>
-              <div> 
+                <div> 
                 <table className="w-full">
                     <thead >
-                      <tr className=" bg-gray-200 "> 
-                         <th className=" text-center py-2">Employee</th>
+                        <tr className=" bg-gray-200 "> 
+                            <th className=" text-center py-2">Employee</th>
                         <th className="text-center">Description</th>
                         <th className="text-center">Salary</th>
                         <th className="text-center">Date</th>
@@ -151,7 +142,7 @@ const Salaries = () => {
                         
                     </tbody>
                 </table>
-              </div>
+                </div>
             </Card>
         </div>
     </>
