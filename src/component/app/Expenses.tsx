@@ -7,7 +7,8 @@ import IconButton from "../shared/iconButton"
 import Form from "../shared/form"
 import Input from "../shared/input"
 import { useLocation } from "react-router-dom"
-import Divider from "../shared/divider"
+import schoolLogo from "../../assets/school.png"
+
 
 const Expenses = () => {
     const [open,setOpen] =useState(false)
@@ -21,6 +22,18 @@ const Expenses = () => {
   return (
     <>
         <div className="p-4">
+            
+        <Card>
+            <div className="flex flex-col items-center gap-2 ">
+                <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
+                <h1 className=" font-semibold text-black">CodingOtt International School</h1>
+                <p>Make you child creative</p>
+                <small>www.codeschool.com</small>
+            </div>
+        </Card>
+        </div>
+        
+         <div className="p-4">
             <Card >
                 <div className="flex justify-between">
                     <div  className="flex justify-center items-center gap-2 ">

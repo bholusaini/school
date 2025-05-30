@@ -43,7 +43,7 @@ const Settings = () => {
 
             </Card>
       </div>
-      <div className=" w-full flex gap-4 p-4 ">
+      <div className=" w-full  flex gap-4 p-4 ">
            <div style={{width:"300PX"}}>
               <Card>
                 <div className=" h-screen flex flex-col items-center gap-2 ">
@@ -55,10 +55,10 @@ const Settings = () => {
               </Card>
            </div> 
 
-           <div style={{width:'calc(100% - 300px)'}}>
+           <div  style={{width:'calc(100% - 300px)'}}>
               <Card> 
                 
-                < div className="flex flex-col gap-4">
+                < div className=" h-screen flex flex-col gap-4">
                   <div className="bg-indigo-500 text-white py-2 text-center rounded">School infromations</div>
 
                  <Form className="grid grid-cols-2 gap-4">

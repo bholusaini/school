@@ -8,6 +8,7 @@ import Form from "../shared/form"
 import Input from "../shared/input"
 import { useState } from "react"
 import IconButton from "../shared/iconButton"
+import schoolLogo from "../../assets/school.png"
 
 const Teacher = () => {
   const {pathname} = useLocation()
@@ -19,7 +20,19 @@ const Teacher = () => {
   }
   return (
     <>
-      <div className="h-2 p-4">
+       <div className="p-4">
+            
+        <Card>
+            <div className="flex flex-col items-center gap-2 ">
+                <img src={schoolLogo} alt="LOGO" className="w-[80px]" />
+                <h1 className=" font-semibold text-black">CodingOtt International School</h1>
+                <p>Make you child creative</p>
+                <small>www.codeschool.com</small>
+            </div>
+        </Card>
+        </div>
+        
+         <div className="p-4">
         <Card>
           <div className="flex justify-between">
             <div className="flex justify-center items-center gap-2"> 
@@ -133,7 +146,7 @@ const Teacher = () => {
         </Form>
       </Drawer>             
 
-      <div className="p-4 mt-18 ">
+      <div className="p-4  ">
         <div className=" min-h-screen grid grid-cols-4 gap-2  p-4 bg-white rounded">        
           
           <Card >
