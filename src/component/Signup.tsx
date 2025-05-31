@@ -3,20 +3,22 @@ import Input from "./shared/input"
 import login from "../assets/login.jpg"
 import logo from "../assets/logo.avif"
 import Card from "./shared/card"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import axios from "axios"
 import { toast } from "react-toastify"
 
+
 const Signup = () => {
-   
+      const navigate = useNavigate()
     const signup = async(values:FormDataType)=>{
             try{
-                const {data} = await axios.post("http://localhost:8080/auth/signup", values) 
-              toast.success(data.message);
+                const {data} = await axios.post("http://localhost:8080/auth/signup", values)
+                navigate('/login')
+                toast.success(data.message);
             }
             catch(err:any)
             {
-                toast.error(err.message);
+              toast.error(err.message);
             }
         }
   return (
