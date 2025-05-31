@@ -16,10 +16,12 @@ import Expenses from './component/app/Expenses';
 import Salaries from './component/app/Salaries';
 import Settings from './component/app/Settings';
 import Context from './Context';
+import { useState } from 'react';
 const App = () => {
+  const [session,setSession] = useState(null)
   return (
     <div>
-    <Context.Provider value="bk" >
+    <Context.Provider value={{session,setSession}}>
      <BrowserRouter>
       <Routes>
         <Route path='/login' element={<Login/>} />

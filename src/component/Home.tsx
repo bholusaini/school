@@ -1,11 +1,15 @@
 import { useContext } from "react"
 import Context from "../Context"
+import Button from "./shared/button"
 
 
 const Home = () => {
-  const x = useContext(Context)
+  const {session,setSession} = useContext(Context)
   return (
-    <div>{x}</div>
+    <div>
+      <Button onClick={()=>setSession("bk@gmail.com")}>useContext</Button>
+      {`session is ${session}`}
+    </div>
   )
 }
 
