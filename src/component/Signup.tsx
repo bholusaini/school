@@ -6,6 +6,7 @@ import Card from "./shared/card"
 import {Link, useNavigate} from "react-router-dom"
 import axios from "axios"
 import { toast } from "react-toastify"
+import CatchError from "../lib/CatchError"
 
 
 const Signup = () => {
@@ -16,9 +17,9 @@ const Signup = () => {
                 navigate('/login')
                 toast.success(data.message);
             }
-            catch(err:any)
+            catch(err:unknown)
             {
-              toast.error(err.message);
+              CatchError(err)
             }
         }
   return (
