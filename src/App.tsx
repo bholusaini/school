@@ -15,10 +15,11 @@ import Employees from './component/app/Employees';
 import Expenses from './component/app/Expenses';
 import Salaries from './component/app/Salaries';
 import Settings from './component/app/Settings';
+import Context from './Context';
 const App = () => {
   return (
     <div>
-  
+    <Context.Provider value="bk" >
      <BrowserRouter>
       <Routes>
         <Route path='/login' element={<Login/>} />
@@ -39,6 +40,7 @@ const App = () => {
       </Routes>
       <ToastContainer/>
     </BrowserRouter>
+    </Context.Provider>
     </div>
   )
 }
