@@ -51,10 +51,16 @@ const Layout = () => {
       label:"Salaries"
 
     },
+    {
+      icon:"patreon-line",
+      href:"/app/payment",
+      label:"Payment"
+
+    },
   
     {
       icon:"settings-2-line",
-      href:"/app/Settings",
+      href:"/app/settings",
       label:"Settings"
 
     },    
