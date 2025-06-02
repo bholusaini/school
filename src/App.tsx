@@ -18,6 +18,7 @@ import Settings from './component/app/Settings';
 import Context from './Context';
 import { useState } from 'react';
 import Payment from './component/app/Payment';
+import Guard from './Guard';
 
 
 const App = () => {
@@ -30,7 +31,8 @@ const App = () => {
         <Route path='/login' element={<Login/>} />
         <Route path='/Signup' element={<Signup/>}/>
         <Route path='/' element={<Home/>}/>
-
+        <Route element={<Guard/>}>
+        
           <Route path='/app' element={<Layout/>}>
             <Route path='dashboard' element={<Dashboard/>}/>
             <Route path='' element={<Dashboard/>}/>
@@ -42,8 +44,8 @@ const App = () => {
             <Route path='expenses' element={<Expenses/>}/>
             <Route path='salaries' element={<Salaries/>}/>
             <Route path='settings' element={<Settings/>}/>
-            <Route path='payment' element={<Payment/>}/>
-                               
+            <Route path='payment' element={<Payment/>}/>                               
+           </Route>
         </Route>
       </Routes>
       <ToastContainer/>

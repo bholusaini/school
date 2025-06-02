@@ -4,20 +4,38 @@ import Button from "../shared/button"
 import Card from "../shared/card"
 import Drawer from "../shared/drawer"
 import IconButton from "../shared/iconButton"
-import Form from "../shared/form"
+import Form, { type FormDataType } from "../shared/form"
 import Input from "../shared/input"
 import { useLocation } from "react-router-dom"
 import schoolLogo from "../../assets/school.png"
+import HttpInterceptor from "../../lib/HttpInterceptor"
+import { toast } from "react-toastify"
+import CatchError from "../../lib/CatchError"
+import axios from "axios"
 
 const Subject = () => {
     const [open,setOpen] =useState(false)
     const {pathname} = useLocation()
 
     const getPathname = (path:string)=>{
-           const fristPath = path.split("/").pop()
-          
+           const fristPath = path.split("/").pop()          
            return fristPath
     }
+ 
+      const createSubject = async(values:FormDataType)=>{
+            try{
+                console.log("hi");
+                const {data} = await axios.post("http://localhost:8080/subject", values)        
+                console.log(data);        
+                toast.success(data.message);
+            }
+            catch(err:unknown)
+            {
+              CatchError(err)
+            }
+        }
+
+
   return (
     <>
         <div className="p-4">            
@@ -51,7 +69,7 @@ const Subject = () => {
             open={open}
             onClose={()=>setOpen(false)}
         >
-          <Form className="grid grid-cols-2 gap-4">           
+          <Form className="grid grid-cols-2 gap-4" onValue={createSubject}>           
             <div className="flex flex-col gap-2 "> 
                 <label >Subject's Name</label>
                 <Input name="subjectname" type="text" placeholder=" Enter Subject Name"/>
