@@ -20,21 +20,21 @@ const Subject = () => {
     const [subject,setSubject] = useState<any[]>([])
 
     const getPathname = (path:string)=>{
-           const fristPath = path.split("/").pop()          
-           return fristPath
+        const fristPath = path.split("/").pop()          
+        return fristPath
     }
  
-      const createSubject = async(values:FormDataType)=>{
-            try{
-                console.log("hi");
-                const {data} = await HttpInterceptor.post("/subject", values)        
-                console.log(data);        
-                toast.success(data.message);
-            }
-            catch(err:unknown)
-            {
-              CatchError(err)
-            }
+    const createSubject = async(values:FormDataType)=>{
+        try{
+            console.log("hi");
+            const {data} = await HttpInterceptor.post("/subject", values)        
+            console.log(data);        
+            toast.success(data.message);
+        }
+        catch(err:unknown)
+        {
+            CatchError(err)
+        }
     }
 
     useEffect(()=>{
@@ -106,29 +106,23 @@ const Subject = () => {
         <div className="p-4"> 
             <Card>
                 <div className="grid grid-cols-4 gap-8 ">
-
-                {
-                   subject &&  subject.map((item,index)=>(
-                           <Card key={index}>
-                        <div  className="flex flex-col items-center gap-2">
-                            <div className=" p-4 rounded-b-md  text-6xl font-bold"><i className="ri-book-3-fill"></i></div>
-                            <div className="flex flex-col justify-center items-center gap-2">
-                                <h1 className="text-2xl font-semibold text-black">{item.subjectName}</h1>
-                                <h3>{item.fullMark}</h3>
+                    {
+                    subject &&  subject.map((item,index)=>(
+                        <Card key={index}>
+                            <div  className="flex flex-col items-center gap-2">
+                                <div className=" p-4 rounded-b-md  text-6xl font-bold"><i className="ri-book-3-fill"></i></div>
+                                <div className="flex flex-col justify-center items-center gap-2">
+                                    <h1 className="text-2xl font-semibold text-black">{item.subjectName}</h1>
+                                    <h3>{item.fullMark}</h3>
+                                </div>
+                                <div className="flex justify-center items-center gap-4">
+                                    <IconButton type="success" icon="edit-line"/>
+                                    <IconButton type="danger" icon="delete-bin-line"/>
+                                </div>
                             </div>
-                            <div className="flex justify-center items-center gap-4">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </div>
-                        </div>
-                    </Card>   
+                        </Card>   
                     ))
-                }
-
-                               
-                    
-                 
-                    
+                    }                            
                 </div>
             </Card>
         </div>
