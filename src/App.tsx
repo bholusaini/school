@@ -48,7 +48,7 @@ const App = () => {
            </Route>
         </Route>
       </Routes>
-      <ToastContainer/>
+      <ToastContainer position="top-center"/>
     </BrowserRouter>
     </Context.Provider>
     </div>

@@ -89,56 +89,21 @@ const Salaries = () => {
                     </thead>
                     <tbody >
                         
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">bksarswal</td>
-                            <td className="text-center">My  salaries</td>
-                            <td className="text-center">₹40000</td>
-                            <td className="text-center">June 2, 2025 10:00 Am</td>
-                            <td className="flex justify-center text-center gap-2 py-2 ">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </td>
-                        </tr>
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">bksarswal</td>
-                            <td className="text-center">My  salaries</td>
-                            <td className="text-center">₹40000</td>
-                            <td className="text-center">June 2, 2025 10:00 Am</td>
-                            <td className="flex justify-center text-center gap-2 py-2 ">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </td>
-                        </tr>
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">bksarswal</td>
-                            <td className="text-center">My  salaries</td>
-                            <td className="text-center">₹40000</td>
-                            <td className="text-center">June 2, 2025 10:00 Am</td>
-                            <td className="flex justify-center text-center gap-2 py-2 ">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </td>
-                        </tr>
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">bksarswal</td>
-                            <td className="text-center">My  salaries</td>
-                            <td className="text-center">₹40000</td>
-                            <td className="text-center">June 2, 2025 10:00 Am</td>
-                            <td className="flex justify-center text-center gap-2 py-2 ">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </td>
-                        </tr>
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">bksarswal</td>
-                            <td className="text-center">My  salaries</td>
-                            <td className="text-center">₹40000</td>
-                            <td className="text-center">June 2, 2025 10:00 Am</td>
-                            <td className="flex justify-center text-center gap-2 py-2 ">
-                                <IconButton type="success" icon="edit-line"/>
-                                <IconButton type="danger" icon="delete-bin-line"/>
-                            </td>
-                        </tr>
+                        {
+                            Array(12).fill("kk").map(()=>(
+                                <tr className="border-b border-b-zinc-200 ">
+                                    <td className=" text-center ">bksarswal</td>
+                                    <td className="text-center">My  salaries</td>
+                                    <td className="text-center">₹40000</td>
+                                    <td className="text-center">June 2, 2025 10:00 Am</td>
+                                    <td className="flex justify-center text-center gap-2 py-2 ">
+                                        <IconButton type="success" icon="edit-line"/>
+                                        <IconButton type="danger" icon="delete-bin-line"/>
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                       
                         
                     </tbody>
                 </table>

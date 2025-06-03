@@ -4,11 +4,13 @@ import Card from "../shared/card"
 import logo from "../../assets/student.png"
 import { useLocation } from "react-router-dom"
 import Drawer from "../shared/drawer"
-import Form from "../shared/form"
+import Form, { type FormDataType } from "../shared/form"
 import Input from "../shared/input"
 import { useState } from "react"
 import IconButton from "../shared/iconButton"
 import schoolLogo from "../../assets/school.png"
+import HttpInterceptor from "../../lib/HttpInterceptor"
+import { toast } from "react-toastify"
 
 const Employees = () => {
   const {pathname} = useLocation()
@@ -17,6 +19,12 @@ const Employees = () => {
     const fristPath = path.split('/').pop()
     const finalPath = fristPath?.split("-").join(" ")
     return finalPath
+  }
+
+  const creatEmployee = async (values:FormDataType)=>{
+    const {data} = await HttpInterceptor.post("/employee",values)
+    console.log(data);
+    toast.success(data.message)    
   }
 
   return (
@@ -53,10 +61,10 @@ const Employees = () => {
       open={open}
       onClose={()=>setOpen(false)}
       >         
-        <Form className=" grid grid-cols-2 gap-6"> 
+        <Form onValue={creatEmployee} className=" grid grid-cols-2 gap-6"> 
             <div className=" w-full flex flex-col gap-2">
               <label>Employees`s Name</label>
-                <Input name="employeesname" type="text" placeholder="Enter Employees name"/>
+                <Input name="employeeName" type="text" placeholder="Enter Employees name"/>
             </div>
         
             <div className=" w-full flex flex-col gap-2">
@@ -128,10 +136,10 @@ const Employees = () => {
 
             <div className=" w-full flex flex-col gap-2">
               <label>Designation</label>
-              <select  className="border border-gray-300 px-3 py-2"> 
-                <option>Peon</option>
-                <option>Manager</option>
-                <option>Counsiller</option>
+              <select name="designation" className="border border-gray-300 px-3 py-2"> 
+                <option>peon</option>
+                <option>manager</option>
+                <option>counsiller</option>
               </select>
             </div>
 
@@ -142,167 +150,31 @@ const Employees = () => {
       <div className="p-4 ">
         <div className=" min-h-screen grid grid-cols-4 gap-2  p-4 bg-white rounded">        
           
-        
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
+         { 
+            Array(12).fill("bksarswal").map(()=>(
+              <Card >
+                <div className="flex flex-col gap-2">
+                    
+                    <div className="w-full flex justify-center">
+                      <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
+                      <Avatar image={logo} size="lg"></Avatar>
+                      </div> 
+                    </div>
 
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
+                    <div className="flex flex-col gap-1 items-center"> 
+                      <h1 className="text-xl  font-bold">bksarswal</h1>
+                      <label >bksarswal@gmail.com</label>
+                      <label >7092428976</label>
+                    </div>
+                    <div className="flex justify-center gap-2">
+                      <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
+                    
+                  </div>
                 </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
-          <Card >
-            <div className="flex flex-col gap-2">
-                
-                <div className="w-full flex justify-center">
-                  <div className="flex w-[100px] h-[100px] rounded-full border-3 border-amber-200 justify-center " >
-                  <Avatar image={logo} size="lg"></Avatar>
-                  </div> 
-                </div>
-
-                <div className="flex flex-col gap-1 items-center"> 
-                  <h1 className="text-xl  font-bold">bksarswal</h1>
-                  <label >bksarswal@gmail.com</label>
-                  <label >7092428976</label>
-                </div>
-                <div className="flex justify-center gap-2">
-                  <small className=" bg-gray-300 rounded border border-gray-200 px-2 py-1">Manager</small>
-                
-              </div>
-            </div>
-          </Card>          
+              </Card>          
+            ))
+         }
+          
         </div>
       </div>
     </>

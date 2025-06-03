@@ -99,109 +99,29 @@ const Payment = () => {
                         </tr>
                     </thead>
                     <tbody className="space-y-2">
+                        
+                        {
+
+                            Array(12).fill("bk").map(()=>(
+                                <tr className="border-b border-b-zinc-200 ">
+                                    <td className=" text-center ">SdfsFS</td>
+                                    <td className=" text-center  py-2 ">
+                                        <div className=" flex justify-center items-center gap-0.5">                              
+                                            <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
+                                            <div className="flex flex-col items-center gap-0.5">
+                                                <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
+                                                <small className="text-zinc-400">Class -B</small>                            
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="text-center">Father</td>
+                                    <td className="text-center">99999999</td>
+                                    <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
+                                    <td className="text-center">June 2, 2025 </td>                            
+                                </tr>                    
+                            ))
+                        }                                       
                                           
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
-                        <tr className="border-b border-b-zinc-200 ">
-                            <td className=" text-center ">SdfsFS</td>
-                            <td className=" text-center  py-2 ">
-                                <div className=" flex justify-center items-center gap-0.5">                              
-                                   <img src={schoolLogo} alt="student " className="rounded-full w-13"/>
-                                   <div className="flex flex-col items-center gap-0.5">
-                                      <h1 className="text-black font-semibold text-xl">Bksarswal</h1>
-                                      <small className="text-zinc-400">Class -B</small>                            
-                                   </div>
-                                </div>
-                            </td>
-                            <td className="text-center">Father</td>
-                            <td className="text-center">99999999</td>
-                            <td className="text-center "> <small className="bg-green-300 rounded px-1">paid</small></td>
-                            <td className="text-center">June 2, 2025 </td>                            
-                        </tr>                      
-                                               
                     </tbody>
                 </table>
                 </div>
