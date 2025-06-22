@@ -14,8 +14,8 @@ const Signup = () => {
     const signup = async(values:FormDataType)=>{
             try{
                 const {data} = await axios.post("http://localhost:8080/auth/signup", values)
-                navigate('/login')
                 toast.success(data.message);
+                navigate('/login')
             }
             catch(err:unknown)
             {
@@ -35,28 +35,32 @@ const Signup = () => {
               </div>
               
               <Form onValue={signup} className="w-[300px] space-y-3 px-4">
-                <Input
-                 
-                    name="fullname"
-                    placeholder="Enter your name"
+                <Input                 
+                    name="schoolName"
+                    placeholder="School name"
+                />
+
+                <Input                 
+                    name="directorName"
+                    placeholder="Director name"
                 />
 
                 <Input 
                    type="email"
                     name="email" 
-                    placeholder="Enter Emal"
+                    placeholder="Emal Id"
                 />
  
                 <Input 
                     type="tel"
                     name="mobile"
-                    placeholder="Enter mobile"
+                    placeholder="Mobile"
                 />
 
                 <Input 
                        type="password"
                     name="password" 
-                    placeholder="Enter password"
+                    placeholder="Password"
                 />
 
                 <div className="w-full flex justify-center "> 

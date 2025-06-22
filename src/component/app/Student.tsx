@@ -36,7 +36,6 @@ const Student = () => {
   const fetchStudent = async ()=>{
     const {data} = await HttpInterceptor.get('/student')
     setStudent(data)
-
   }
 
   return (

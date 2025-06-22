@@ -15,8 +15,8 @@ const Login = () => {
    const handleLoginForm  = async (values:FormDataType)=>{
    try{
      const  {data} = await HttpInterceptor.post("/auth/login",values)
-     navigate('/app')
      toast.success(data.message);
+     navigate('/app')
    }
    catch(err:any)
    {
@@ -38,12 +38,12 @@ const Login = () => {
               <Form  onValue={handleLoginForm} className="w-[300px] space-y-3 px-4">
                 <Input 
                 name="email" 
-                placeholder="Enter Emal"
+                placeholder="Email Id"
                 />
 
                 <Input 
                 name="password" 
-                placeholder="Enter password"
+                placeholder="Password"
                 />
 
                 <div className="w-full flex justify-center "> 
